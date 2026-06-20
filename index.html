@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,6 +19,7 @@
             color: var(--cor-texto);
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
 
         /* Topo / Navbar */
@@ -30,6 +30,9 @@
             padding: 15px 20px;
             background-color: #000000;
             border-bottom: 1px solid #2c2c2c;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header h1 {
@@ -147,9 +150,61 @@
             margin: 5px 0 0 0;
         }
 
+        /* Quem Faz o Trabalho / Mestre de Obra */
+        .perfil-section {
+            padding: 40px 20px;
+            background-color: var(--bg-card);
+            border-top: 1px solid #2c2c2c;
+            border-bottom: 1px solid #2c2c2c;
+            text-align: center;
+        }
+
+        .perfil-section h3 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .perfil-section h3 span {
+            color: var(--cor-destaque);
+        }
+
+        .foto-juliano {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--cor-destaque);
+            margin-bottom: 15px;
+        }
+
+        .perfil-section h4 {
+            margin: 5px 0;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .perfil-section .cargo {
+            color: var(--cor-destaque);
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .perfil-section p {
+            color: var(--cor-subtexto);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         /* Galeria de Fotos */
         .galeria-section {
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .galeria-section h4 {
@@ -207,6 +262,55 @@
             margin: 0;
         }
 
+        /* Perguntas Frequentes (FAQ) */
+        .faq-section {
+            padding: 40px 20px;
+            background-color: #0b0b0b;
+            border-top: 1px solid #2c2c2c;
+        }
+
+        .faq-section h3 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .faq-section h3 span {
+            color: var(--cor-destaque);
+        }
+
+        details {
+            background-color: var(--bg-card);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border: 1px solid #2c2c2c;
+        }
+
+        summary {
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+            color: #fff;
+            outline: none;
+            user-select: none;
+        }
+
+        details[open] summary {
+            color: var(--cor-destaque);
+            margin-bottom: 10px;
+        }
+
+        details p {
+            color: var(--cor-subtexto);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+            padding-top: 5px;
+        }
+
         /* Botão Flutuante do WhatsApp */
         .whatsapp-fixo {
             position: fixed;
@@ -232,65 +336,90 @@
 </head>
 <body>
 
-    <!-- Topo -->
     <header>
         <h1>JBM <span>Construções</span></h1>
-        <a href="https://wa.me/5551980142093" target="_blank" class="btn-topo">Pedir Orçamento</a>
+        <a href="https://wa.me/5551998142093" target="_blank" class="btn-topo">Pedir Orçamento</a>
     </header>
 
-    <!-- Seção Principal -->
     <main class="hero">
-        <div class="tag-local">● Especialista em Steel Frame e Reformas</div>
+        <div class="tag-local">● Alvenaria, Reformas e Steel Frame</div>
         
-        <h2>STEEL FRAME<br><span>FEITO DO JEITO CERTO.</span></h2>
+        <h2>CONSTRUÇÃO E REFORMAS<br><span>DO JEITO CERTO.</span></h2>
         
-        <p>Obra limpa, rápida e sem surpresas no preço. Cuidamos do seu projeto do início ao fim com quem realmente entende de construção civil e reformas em Tramandaí e região.</p>
+        <p>Do alicerce ao acabamento. Entregamos obras residenciais e comerciais de excelência, unindo a robustez da construção convencional à alta tecnologia e agilidade do Steel Frame.</p>
 
         <div class="cta-container">
-            <a href="https://wa.me/5551980142093" target="_blank" class="btn-principal">Pedir Orçamento Grátis</a>
-            <a href="#trabalhos" class="btn-secundario">Ver trabalhos</a>
+            <a href="https://wa.me/5551998142093" target="_blank" class="btn-principal">Pedir Orçamento Grátis</a>
+            <a href="#trabalhos" class="btn-secundario">Ver Trabalhos</a>
         </div>
 
-        <!-- Estatísticas -->
         <div class="status-container">
             <div class="status-box">
-                <h3>+10</h3>
-                <p>Anos de experiência</p>
+                <h3>CONV</h3>
+                <p>Alvenaria e Reformas</p>
             </div>
             <div class="status-box">
-                <h3>0</h3>
-                <p>Taxa de orçamento</p>
+                <h3>STEEL</h3>
+                <p>Construção a Seco</p>
             </div>
             <div class="status-box">
-                <h3>TMD</h3>
-                <p>Tramandaí e Região</p>
+                <h3>OBRA</h3>
+                <p>Equipe Profissional</p>
             </div>
         </div>
     </main>
 
-    <!-- Galeria de Trabalhos -->
+    <section class="perfil-section">
+        <h3>Quem faz o <span>Trabalho</span></h3>
+        <img src="1000200448.jpg" alt="Juliano de Brito Melos" class="foto-juliano" onerror="this.src='1000200494.jpg'">
+        <h4>Juliano de Brito Melos</h4>
+        <span class="cargo">Mestre de Obra</span>
+        <p>Liderando uma equipe altamente qualificada e profissionalizada, Juliano acompanha de perto cada especificação do projeto. Garantimos responsabilidade técnica, limpeza e compromisso rigoroso com os prazos acordados.</p>
+    </section>
+
     <section class="galeria-section" id="trabalhos">
         <h4>Veja na prática</h4>
         <h3>O trabalho em movimento.</h3>
 
         <div class="grid-galeria">
-            <!-- NOTA: Substitua o link entre as aspas pelas fotos reais da sua obra futuramente -->
-            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+1" alt="Trabalho JBM">
-            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+2" alt="Trabalho JBM">
-            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+3" alt="Trabalho JBM">
-            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+4" alt="Trabalho JBM">
-            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+5" alt="Trabalho JBM">
+            <img src="1000200576.jpg" alt="Estrutura Steel Frame JBM">
+            <img src="1000200513.jpg" alt="Acabamento Interno JBM">
+            <img src="1000200517.jpg" alt="Revestimento e Piso JBM">
+            <img src="1000200574.jpg" alt="Impermeabilização e Obras JBM">
+            <img src="1000200488.jpg" alt="Cobertura e Telhado JBM">
             
-            <!-- Último quadrado é o chamado para orçamento igual ao modelo -->
-            <a href="https://wa.me/5551980142093" target="_blank" style="text-decoration: none;" class="card-orcamento">
-                <h4>QUER UM RESULTADO ASSIM?</h4>
+            <a href="https://wa.me/5551998142093" target="_blank" style="text-decoration: none;" class="card-orcamento">
+                <h4>QUER UN RESULTADO ASSIM?</h4>
                 <p>Pedir orçamento grátis</p>
             </a>
         </div>
     </section>
 
-    <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/5551980142093" target="_blank" class="whatsapp-fixo">
+    <section class="faq-section">
+        <h3>Dúvidas <span>Frequentes</span></h3>
+
+        <details>
+            <summary>A JBM faz tanto obra convencional quanto Steel Frame?</summary>
+            <p>Sim! Dominamos perfeitamente as duas técnicas. Executamos construções convencionais completas (fundação, alvenaria, vigas e lajes), reformas estruturais e também somos especialistas na montagem de estruturas de alta performance em Steel Frame.</p>
+        </details>
+
+        <details>
+            <summary>Quais são as especificações gerais das obras que vocês atendem?</summary>
+            <p>Atendemos projetos residenciais e comerciais de pequeno, médio e grande porte. Cuidamos de fundações, levantamento de paredes, coberturas, instalações hidráulicas/elétricas básicas integradas, colocação de pisos, azulejos e acabamentos finos de pintura.</p>
+        </details>
+
+        <details>
+            <summary>Como funciona o acompanhamento e a liderança das equipes?</summary>
+            <p>Todas as frentes de trabalho são coordenadas diretamente pelo mestre de obra Juliano de Brito Melos. Nossa equipe é totalmente profissionalizada, treinada para manter o canteiro organizado, limpo e focado no cumprimento fiel do projeto técnico fornecido.</p>
+        </details>
+
+        <details>
+            <summary>Como solicitar um orçamento e quais os prazos de resposta?</summary>
+            <p>Basta clicar em qualquer botão de WhatsApp aqui no site! Você enviará os detalhes ou o projeto da sua obra diretamente para nós. Realizamos uma análise detalhada das especificações para enviar uma proposta justa, transparente e sem surpresas no meio do caminho.</p>
+        </details>
+    </section>
+
+    <a href="https://wa.me/5551998142093" target="_blank" class="whatsapp-fixo">
         <svg viewBox="0 0 32 32">
             <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.7-2A13 13 0 1 0 16 2zm6.6 18.6c-.4.5-1.9 1-2.6 1-.7 0-1.5-.3-4.5-1.6-3.8-1.6-6.2-5.4-6.4-5.7-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.4.7-.5.9-.5h.6c.2 0 .5 0 .8.6.3.7 1 2.4 1.1 2.6.1.2.1.5 0 .7-.1.3-.3.5-.5.7-.2.2-.4.5-.2.8.4.7 1.7 2.8 3.6 4.5 2.5 2.2 4.6 2.9 5.2 3.2.6.3.9.2 1.2-.1.4-.4 1.6-1.9 2-2.5.4-.6.8-.5 1.3-.3.6.3 3.5 1.7 4.1 2 .6.3 1 .4 1.1.7.2.3.2 1.7-.2 2.2z"/>
         </svg>
