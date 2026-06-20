@@ -2,32 +2,34 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>JBM Construções e Reformas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Projeto ao Acabamento | JBM Construções</title>
     <style>
+        /* Configurações Gerais e Cores */
         :root {
-            --bg-principal: #121212;
-            --bg-card: #1e1e1e;
-            --cor-destaque: #f39c12;
-            --cor-texto: #ffffff;
+            --primary: #f39c12; /* Amarelo/Dourado do seu modelo */
+            --dark: #121212;    /* Fundo escuro */
+            --bg-card: #1e1e1e; /* Fundo dos blocos */
+            --light: #fafafa;   
+            --text-dark: #333333;
+            --text-light: #ffffff;
             --cor-subtexto: #b3b3b3;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: var(--bg-principal);
-            color: var(--cor-texto);
+            background-color: var(--dark);
+            color: var(--text-light);
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
 
-        /* Topo / Navbar */
+        /* Cabeçalho / Navbar */
         header {
             display: flex;
             justify-content: space-between;
@@ -47,11 +49,11 @@
         }
 
         header h1 span {
-            color: var(--cor-destaque);
+            color: var(--primary);
         }
 
         .btn-topo {
-            background-color: var(--cor-destaque);
+            background-color: var(--primary);
             color: #000;
             text-decoration: none;
             padding: 8px 15px;
@@ -60,41 +62,53 @@
             font-size: 0.85rem;
         }
 
-        /* Seção Principal (Hero) */
-        .hero {
+        /* Banner de Entrada */
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 1px solid #2c2c2c;
+        }
+
+        .hero-banner h2 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero-banner h2 span {
+            color: var(--primary);
+        }
+
+        .hero-banner p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--cor-subtexto);
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 40px 20px;
         }
 
-        .tag-local {
-            display: inline-block;
-            border: 1px solid var(--cor-destaque);
-            color: var(--cor-destaque);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-            font-weight: bold;
+        /* Seção do Vídeo e Introdução */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
         }
 
-        .hero h2 {
-            font-size: 2.2rem;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-weight: 900;
+        @media (min-width: 768px) {
+            .main-content {
+                grid-template-columns: 1.2fr 1fr;
+                align-items: center;
+            }
         }
 
-        .hero h2 span {
-            color: var(--cor-destaque);
-        }
-
-        .hero p {
-            color: var(--cor-subtexto);
-            font-size: 1rem;
-            margin-bottom: 30px;
-        }
-
-        /* Área do Vídeo de Destaque */
         .video-container {
             position: relative;
             padding-bottom: 56.25%; /* Proporção 16:9 */
@@ -102,7 +116,6 @@
             overflow: hidden;
             background: #000;
             border-radius: 8px;
-            margin-bottom: 30px;
             border: 1px solid #2c2c2c;
         }
 
@@ -112,62 +125,46 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: 0;
         }
 
-        /* Botões */
-        .cta-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 40px;
+        .intro-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            text-transform: uppercase;
         }
 
-        .btn-principal, .btn-secundario {
-            flex: 1;
-            text-decoration: none;
-            padding: 15px 10px;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 5px;
-            font-size: 0.9rem;
+        .intro-text p {
+            margin-bottom: 15px;
+            color: var(--cor-subtexto);
         }
 
-        .btn-principal {
-            background-color: var(--cor-destaque);
-            color: #000;
-        }
-
-        .btn-secundario {
-            background-color: transparent;
-            color: var(--cor-texto);
-            border: 1px solid #333;
-        }
-
-        /* Seção de Etapas / Galeria */
+        /* Grid de Etapas da Obra (Com fotos nos cards) */
         .etapas-section {
-            padding: 40px 20px;
-            background-color: #0b0b0b;
+            margin-bottom: 60px;
         }
 
         .etapas-section h3 {
-            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 40px;
             text-transform: uppercase;
-            margin-bottom: 25px;
-            font-weight: 800;
+            font-size: 1.8rem;
         }
 
         .etapas-section h3 span {
-            color: var(--cor-destaque);
+            color: var(--primary);
         }
 
         .grid-etapas {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 25px;
         }
 
         @media (min-width: 768px) {
             .grid-etapas {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -176,50 +173,113 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #2c2c2c;
+            transition: transform 0.3s ease;
+        }
+
+        .card-etapa:hover {
+            transform: translateY(-5px);
         }
 
         .card-etapa img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-            background-color: #222;
+            border-bottom: 4px solid var(--primary);
         }
 
         .card-conteudo {
-            padding: 20px;
+            padding: 25px;
         }
 
         .card-conteudo h4 {
-            color: var(--cor-destaque);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            color: var(--primary);
+            font-size: 1.3rem;
             text-transform: uppercase;
         }
 
         .card-conteudo p {
             color: var(--cor-subtexto);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
-        /* Chamada Final */
-        .cta-final {
-            padding: 50px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-            border-top: 1px solid #2c2c2c;
+        /* Tabela Técnica */
+        .tech-section {
+            background: var(--bg-card);
+            padding: 40px 20px;
+            border-radius: 8px;
+            border: 1px solid #2c2c2c;
+            margin-bottom: 60px;
         }
 
-        .cta-final h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .cta-final p {
-            color: var(--cor-subtexto);
+        .tech-section h3 {
             margin-bottom: 25px;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            color: var(--primary);
         }
 
-        /* Botão Flutuante do WhatsApp */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #2c2c2c;
+            text-align: left;
+        }
+
+        table tr td:first-child {
+            font-weight: bold;
+            color: #fff;
+            width: 35%;
+        }
+
+        table tr td:last-child {
+            color: var(--cor-subtexto);
+        }
+
+        /* Chamada para Ação (CTA) */
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: #000;
+            border-radius: 8px;
+            border: 1px solid #2c2c2c;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .cta-section p {
+            margin-bottom: 30px;
+            color: var(--cor-subtexto);
+            font-size: 1.1rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25d366; 
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: scale(1.03);
+        }
+
+        /* Botão Fixo */
         .whatsapp-fixo {
             position: fixed;
             bottom: 20px;
@@ -250,81 +310,106 @@
         <a href="https://wa.me/5551998142093" target="_blank" class="btn-topo">Pedir Orçamento</a>
     </header>
 
-    <!-- Seção Principal -->
-    <main class="hero">
-        <div class="tag-local">● Construção e Reformas em Geral</div>
-        
-        <h2>DO PROJETO AO<br><span>ACABAMENTO PERFEITO.</span></h2>
-        
-        <p>Acompanhe a evolução do nosso trabalho. Garantimos excelência e dedicação máxima em cada etapa da sua obra, cuidando desde a estrutura até os detalhes mais finos.</p>
+    <!-- Banner -->
+    <section class="hero-banner">
+        <h2>Do Projeto ao <span>Acabamento</span></h2>
+        <p>Acompanhe a evolução de uma obra completa, onde a robustez da construção se une à precisão do alto padrão.</p>
+    </section>
 
-        <!-- Vídeo de Destaque da Obra -->
-        <div class="video-container">
-            <!-- Renomeie o arquivo do seu vídeo para "obra-jbm.mp4" e coloque na mesma pasta do GitHub -->
-            <video controls>
-                <source src="obra-jbm.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos.
-            </video>
-        </div>
-
-        <div class="cta-container">
-            <a href="https://wa.me/5551998142093" target="_blank" class="btn-principal">Chamar no WhatsApp</a>
-            <a href="#portfolio" class="btn-secundario">Ver Etapas</a>
-        </div>
-    </main>
-
-    <!-- Galeria e Detalhes do Trabalho -->
-    <section class="etapas-section" id="portfolio">
-        <h3>Nosso Trabalho <span>na Prática</span></h3>
+    <div class="container">
         
-        <div class="grid-etapas">
+        <!-- Vídeo + Introdução -->
+        <section class="main-content">
+            <div class="video-container">
+                <!-- Nome do vídeo ajustado para puxar da sua pasta -->
+                <video controls>
+                    <source src="obra-jbm.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
             
-            <!-- Etapa 1 -->
-            <div class="card-etapa">
-                <!-- Se você tiver uma foto dessa etapa, mude o nome abaixo para o nome da foto -->
-                <img src="piso-laminado.jpg" alt="Instalação de Piso Laminado" onerror="this.src='https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-conteudo">
-                    <h4>Piso Laminado</h4>
-                    <p>Preparação rigorosa do contrapiso com massa niveladora e encaixe milimétrico para garantir conforto térmico e elegância no caminhar.</p>
-                </div>
+            <div class="intro-text">
+                <h3>O Desafio e a Solução</h3>
+                <p>Neste projeto, nosso objetivo foi unir rapidez construtiva, segurança estrutural definitiva e um acabamento sofisticado que valorizasse cada espaço.</p>
+                <p>O resultado? Uma obra limpa, organizada, executada rigorosamente no prazo e com fidelidade total ao projeto do cliente.</p>
             </div>
+        </section>
 
-            <!-- Etapa 2 -->
-            <div class="card-etapa">
-                <img src="escada-porcelanato.jpg" alt="Revestimento de Escada em Porcelanato" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-conteudo">
-                    <h4>Escada em Porcelanato</h4>
-                    <p>Revestimento sofisticado com alinhamento perfeito, cortes precisos e proteção adequada durante a cura do material.</p>
+        <!-- Seção: Cards com as Suas Fotos Reais -->
+        <section class="etapas-section">
+            <h3>Nosso Trabalho <span>na Prática</span></h3>
+            <div class="grid-etapas">
+                
+                <!-- Etapa 1 -->
+                <div class="card-etapa">
+                    <img src="1000200576.jpg" alt="Estrutura da Obra">
+                    <div class="card-conteudo">
+                        <h4>Estrutura Avançada</h4>
+                        <p>Montagem moderna e limpa de estruturas de alta resistência, garantindo o alinhamento perfeito de todas as etapas e agilidade na entrega do esqueleto da obra.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Etapa 3 -->
-            <div class="card-etapa">
-                <img src="steel-frame.jpg" alt="Estrutura de Steel Frame" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-conteudo">
-                    <h4>Estrutura Avançada</h4>
-                    <p>Montagem moderna e limpa de estruturas de alta resistência, garantindo isolamento termoacústico e agilidade na entrega.</p>
+                <!-- Etapa 2 -->
+                <div class="card-etapa">
+                    <img src="1000200513.jpg" alt="Impermeabilização">
+                    <div class="card-conteudo">
+                        <h4>Impermeabilização Técnica</h4>
+                        <p>Aplicação profissional com atenção redobrada. O cuidado ideal na laje para blindar a estrutura contra o tempo e evitar qualquer problema futuro com infiltrações.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Etapa 4 -->
-            <div class="card-etapa">
-                <img src="manta-asfaltica.jpg" alt="Impermeabilização com Manta Asfáltica" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-conteudo">
-                    <h4>Impermeabilização</h4>
-                    <p>Aplicação técnica de manta asfáltica com maçarico. O cuidado ideal na laje para evitar dores de cabeça futuras com infiltrações.</p>
+                <!-- Etapa 3 -->
+                <div class="card-etapa">
+                    <img src="1000200517.jpg" alt="Acabamento de Escada">
+                    <div class="card-conteudo">
+                        <h4>Escada e Porcelanato</h4>
+                        <p>Revestimento de alto padrão com alinhamento milimétrico e cortes precisos, transformando a escada no elemento principal de design do ambiente.</p>
+                    </div>
                 </div>
+
+                <!-- Etapa 4 -->
+                <div class="card-etapa">
+                    <img src="1000200574.jpg" alt="Colocação de Piso">
+                    <div class="card-conteudo">
+                        <h4>Piso e Alinhamento</h4>
+                        <p>Preparação detalhada com massa niveladora antes da colocação, garantindo um encaixe perfeito, superfície lisa e o conforto estético que o cliente exige.</p>
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- Ficha Técnica -->
+        <section class="tech-section">
+            <h3>Especificações Técnicas</h3>
+            <table>
+                <tr>
+                    <td>Tipo de Obra</td>
+                    <td>Residencial / Comercial / Alto Padrão</td>
+                </tr>
+                <tr>
+                    <td>Sistemas Utilizados</td>
+                    <td>Construção Convencional, Reformas e Estruturas Modernas</td>
+                </tr>
+                <tr>
+                    <td>Acabamentos</td>
+                    <td>Porcelanato Premium, Revestimentos de Escada e Pisos</td>
+                </tr>
+                <tr>
+                    <td>Diferencial JBM</td>
+                    <td>Equipe profissionalizada liderada por mestre de obra, limpeza e entrega no prazo</td>
+                </tr>
+            </table>
+        </section>
 
-    <!-- Chamada Final -->
-    <section class="cta-final">
-        <h3>Pronto para valorizar seu imóvel?</h3>
-        <p>Faça seu orçamento de construção ou reforma com quem entrega qualidade de verdade.</p>
-        <a href="https://wa.me/5551998142093" target="_blank" class="btn-principal" style="display: inline-block; padding: 15px 30px;">Falar Direto no WhatsApp</a>
-    </section>
+        <!-- Chamada para Ação (CTA) -->
+        <section class="cta-section">
+            <h3>Pronto para construir ou reformar sem estresse?</h3>
+            <p>Não deixe o seu sonho na mão de amadores. Garanta valorização, segurança e o acabamento que você sempre quis para o seu imóvel.</p>
+            <a href="https://wa.me/5551998142093" class="btn-whatsapp" target="_blank">Falar com Juliano no WhatsApp</a>
+        </section>
+
+    </div>
 
     <!-- Botão Flutuante do WhatsApp -->
     <a href="https://wa.me/5551998142093" target="_blank" class="whatsapp-fixo">
@@ -335,3 +420,5 @@
 
 </body>
 </html>
+
+        
