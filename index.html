@@ -2,74 +2,51 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JBM Construções | Do Projeto ao Acabamento</title>
+    <title>JBM Construções</title>
     <style>
-        :root { --primary: #f39c12; --dark: #121212; --bg-card: #1e1e1e; --text-light: #ffffff; --cor-subtexto: #b3b3b3; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--dark); color: var(--text-light); line-height: 1.6; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #000; border-bottom: 1px solid #2c2c2c; position: sticky; top: 0; z-index: 1000; }
-        header h1 { font-size: 1.2rem; text-transform: uppercase; font-weight: 800; }
-        header h1 span { color: var(--primary); }
-        .btn-topo { background-color: var(--primary); color: #000; text-decoration: none; padding: 8px 15px; font-weight: bold; border-radius: 5px; font-size: 0.85rem; }
-        .hero-banner { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)); text-align: center; padding: 60px 20px; border-bottom: 1px solid #2c2c2c; }
-        .hero-banner h2 { font-size: 2.2rem; text-transform: uppercase; margin-bottom: 15px; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        .section-title { text-align: center; font-size: 1.8rem; margin: 40px 0; color: var(--primary); text-transform: uppercase; }
+        body { background-color: #000; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { text-align: center; padding: 40px; }
+        .hero { font-size: 2.5rem; color: #f39c12; margin-bottom: 20px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         
-        /* Grid de Vídeos */
-        .video-container-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 60px; }
-        .video-section { background: var(--bg-card); padding: 20px; border-radius: 8px; border: 1px solid #2c2c2c; text-align: center; }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: 6px; }
-        .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-        /* Grids de Fotos */
-        .grid-etapas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 50px; }
-        .card-etapa { background: var(--bg-card); border-radius: 8px; border: 1px solid #2c2c2c; overflow: hidden; }
-        .card-etapa img { width: 100%; height: 250px; object-fit: cover; border-bottom: 4px solid var(--primary); }
-        .card-conteudo { padding: 20px; }
+        /* Estilo original de Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .item { background: #1a1a1a; padding: 10px; border-radius: 8px; }
+        img, video { width: 100%; border-radius: 5px; display: block; }
         
-        /* Galeria Extra */
-        .grid-mini-galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 50px; }
-        .card-mini-obra { background-color: var(--bg-card); border: 1px solid #2c2c2c; border-radius: 8px; overflow: hidden; }
-        .card-mini-obra img { width: 100%; height: 180px; object-fit: cover; }
-        .card-mini-conteudo { padding: 15px; }
-
-        .btn-whatsapp { display: block; width: fit-content; margin: 40px auto; background-color: #25d366; color: #fff; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; text-decoration: none; border-radius: 50px; }
+        .btn-zap { display: block; background: #25d366; color: #fff; text-align: center; padding: 15px; margin-top: 30px; text-decoration: none; border-radius: 50px; font-weight: bold; }
     </style>
 </head>
 <body>
-    <header><h1>JBM <span>Construções</span></h1><a href="https://wa.me/5551998142093" class="btn-topo">Orçamento</a></header>
-    <section class="hero-banner"><h2>Do Projeto ao <span>Acabamento</span></h2></section>
-    
+
+    <header>
+        <div class="hero">JBM Construções</div>
+        <p>Do projeto ao acabamento</p>
+    </header>
+
     <div class="container">
-        
-        <h3 class="section-title">Nossos Vídeos de Estrutura</h3>
-        <div class="video-container-grid">
-            <section class="video-section"><h3>Alvenaria</h3><div class="video-wrapper"><video controls><source src="VID-20260620-WA0409.mp4" type="video/mp4"></video></div></section>
-            <section class="video-section"><h3>Steel Frame</h3><div class="video-wrapper"><video controls><source src="VID-20260620-WA0257.mp4" type="video/mp4"></video></div></section>
+        <!-- Vídeos -->
+        <div class="grid">
+            <div class="item"><video controls><source src="VID-20260620-WA0409.mp4" type="video/mp4"></video></div>
+            <div class="item"><video controls><source src="VID-20260620-WA0257.mp4" type="video/mp4"></video></div>
         </div>
 
-        <h3 class="section-title">Evolução da Obra</h3>
-        <div class="grid-etapas">
-            <div class="card-etapa"><img src="IMG-20260620-WA0213.jpg"><div class="card-conteudo"><h4>Cobertura e Telhado</h4><p>Montagem técnica e segurança estrutural.</p></div></div>
-            <div class="card-etapa"><img src="IMG-20260620-WA0250.jpg"><div class="card-conteudo"><h4>Blindagem (Impermeabilização)</h4><p>Proteção total de áreas úmidas.</p></div></div>
-            <div class="card-etapa"><img src="IMG-20260620-WA0238.jpg"><div class="card-conteudo"><h4>Estrutura de Escada</h4><p>Cálculo milimétrico e execução.</p></div></div>
-            <div class="card-etapa"><img src="IMG-20260620-WA0259.jpg"><div class="card-conteudo"><h4>Acabamento Premium</h4><p>Revestimentos e porcelanatos.</p></div></div>
+        <!-- Fotos -->
+        <div class="grid" style="margin-top: 20px;">
+            <div class="item"><img src="IMG-20260620-WA0231.jpg"></div>
+            <div class="item"><img src="IMG-20260620-WA0259.jpg"></div>
+            <div class="item"><img src="IMG-20260620-WA0340.jpg"></div>
+            <div class="item"><img src="IMG-20260620-WA0376.jpg"></div>
+            <div class="item"><img src="IMG-20260620-WA0220.jpg"></div>
+            <div class="item"><img src="IMG-20260620-WA0226.jpg"></div>
+            <div class="item"><img src="IMG-20260620-WA0244.jpg"></div>
+            <div class="item"><img src="IMG-20260620-WA0344(1).jpg"></div>
+            <div class="item"><img src="IMG-20260620-WA0363(1).jpg"></div>
+            <div class="item"><img src="IMG-20260620-WA0371.jpg"></div>
         </div>
 
-        <h3 class="section-title">Galeria Técnica</h3>
-        <div class="grid-mini-galeria">
-            <div class="card-mini-obra"><img src="IMG-20260620-WA0220.jpg"><div class="card-mini-conteudo"><h5>Fidelidade ao Projeto</h5><p>Segurança e robustez.</p></div></div>
-            <div class="card-mini-obra"><img src="IMG-20260620-WA0226.jpg"><div class="card-mini-conteudo"><h5>Plaqueamento</h5><p>Vedação precisa.</p></div></div>
-            <div class="card-mini-obra"><img src="IMG-20260620-WA0239.jpg"><div class="card-mini-conteudo"><h5>Processo de Proteção</h5><p>Cuidado em lajes.</p></div></div>
-            <div class="card-mini-obra"><img src="IMG-20260620-WA0245.jpg"><div class="card-mini-conteudo"><h5>Zonas Blindadas</h5><p>Qualidade anti-infiltração.</p></div></div>
-            <div class="card-mini-obra"><img src="IMG-20260620-WA0233.jpg"><div class="card-mini-conteudo"><h5>Plaqueamento Final</h5><p>Superfícies prontas.</p></div></div>
-            <div class="card-mini-obra"><img src="IMG-20260620-WA0219.jpg"><div class="card-mini-conteudo"><h5>Fechamento Estrutural</h5><p>Fase avançada de obra.</p></div></div>
-        </div>
-
-        <a href="https://wa.me/5551998142093" class="btn-whatsapp">Solicitar Orçamento no WhatsApp</a>
+        <a href="https://wa.me/5551998142093" class="btn-zap">Orçamento no WhatsApp</a>
     </div>
+
 </body>
 </html>
-
