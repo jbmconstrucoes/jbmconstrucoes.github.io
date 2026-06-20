@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -203,7 +203,7 @@
             margin: 0 auto;
         }
 
-        /* Galeria de Fotos */
+        /* Galeria de Fotos Ajustada para as Suas Etapas */
         .galeria-section {
             padding: 40px 20px;
         }
@@ -226,16 +226,45 @@
 
         .grid-galeria {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
-        .grid-galeria img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
+        @media (min-width: 768px) {
+            .grid-galeria {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card-obra {
+            background-color: var(--bg-card);
+            border: 1px solid #2c2c2c;
             border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-obra img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             background-color: #222;
+        }
+
+        .card-obra-conteudo {
+            padding: 15px;
+        }
+
+        .card-obra-conteudo h5 {
+            color: var(--cor-destaque);
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .card-obra-conteudo p {
+            color: var(--cor-subtexto);
+            font-size: 0.85rem;
+            margin: 0;
         }
 
         .card-orcamento {
@@ -247,19 +276,19 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 15px;
+            padding: 30px 15px;
         }
 
         .card-orcamento h4 {
             color: var(--cor-destaque);
-            font-size: 1rem;
+            font-size: 1.2rem;
             margin: 0 0 5px 0;
             font-weight: bold;
         }
 
         .card-orcamento p {
             color: var(--cor-subtexto);
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             margin: 0;
         }
 
@@ -337,89 +366,137 @@
 </head>
 <body>
 
+    <!-- Topo -->
     <header>
         <h1>JBM <span>Construções</span></h1>
         <a href="https://wa.me/5551998142093" target="_blank" class="btn-topo">Pedir Orçamento</a>
     </header>
 
+    <!-- Seção Principal -->
     <main class="hero">
-        <div class="tag-local">● Alvenaria, Reformas e Steel Frame</div>
+        <div class="tag-local">● Alvenaria, Reformas e Estruturas Modernas</div>
         
         <h2>CONSTRUÇÃO E REFORMAS<br><span>DO JEITO CERTO.</span></h2>
         
-        <p>Do alicerce ao acabamento. Entregamos obras residenciais e comerciais de excelência, unindo a robustez da construção convencional à alta tecnologia e agilidade do Steel Frame.</p>
+        <p>Do alicerce ao acabamento. Entregamos obras de excelência, unindo a robustez da construção convencional à precisão de acabamentos finos e impermeabilizações de alta qualidade.</p>
 
         <div class="cta-container">
             <a href="https://wa.me/5551998142093" target="_blank" class="btn-principal">Pedir Orçamento Grátis</a>
             <a href="#trabalhos" class="btn-secundario">Ver Trabalhos</a>
         </div>
 
+        <!-- Estatísticas -->
         <div class="status-container">
             <div class="status-box">
-                <h3>CONV</h3>
+                <h3>OBRAS</h3>
                 <p>Alvenaria e Reformas</p>
             </div>
             <div class="status-box">
-                <h3>STEEL</h3>
-                <p>Construção a Seco</p>
+                <h3>FINO</h3>
+                <p>Acabamento Perfeito</p>
             </div>
             <div class="status-box">
-                <h3>OBRA</h3>
+                <h3>100%</h3>
                 <p>Equipe Profissional</p>
             </div>
         </div>
     </main>
 
+    <!-- Quem Faz o Trabalho -->
     <section class="perfil-section">
         <h3>Quem faz o <span>Trabalho</span></h3>
         <img src="1000200448.jpg" alt="Juliano de Brito Melos" class="foto-juliano" onerror="this.src='1000200448.JPG'; this.onerror=function(){this.src='1000200494.jpg'; this.onerror=function(){this.src='1000200494.JPG';}}">
         <h4>Juliano de Brito Melos</h4>
         <span class="cargo">Mestre de Obra</span>
-        <p>Liderando uma equipe altamente qualificada e profissionalizada, Juliano acompanha de perto cada especificação do projeto. Garantimos responsabilidade técnica, limpeza e compromisso rigoroso com os prazos acordados.</p>
+        <p>Liderando uma equipe altamente qualificada, Juliano acompanha de perto cada especificação do projeto. Garantimos responsabilidade técnica, limpeza e compromisso rigoroso com os prazos acordados.</p>
     </section>
 
+    <!-- Galeria de Trabalhos Modificada para Suas Fotos Reais -->
     <section class="galeria-section" id="trabalhos">
         <h4>Veja na prática</h4>
         <h3>O trabalho em movimento.</h3>
 
         <div class="grid-galeria">
-            <img src="1000200576.jpg" alt="Estrutura Steel Frame JBM" onerror="this.src='1000200576.JPG'">
-            <img src="1000200513.jpg" alt="Acabamento Interno JBM" onerror="this.src='1000200513.JPG'">
-            <img src="1000200517.jpg" alt="Revestimento e Piso JBM" onerror="this.src='1000200517.JPG'">
-            <img src="1000200574.jpg" alt="Impermeabilização e Obras JBM" onerror="this.src='1000200574.JPG'">
-            <img src="1000200488.jpg" alt="Cobertura e Telhado JBM" onerror="this.src='1000200488.JPG'">
             
+            <!-- Foto 1: Estrutura -->
+            <div class="card-obra">
+                <img src="1000200576.jpg" alt="Estrutura da Obra" onerror="this.src='1000200576.JPG'">
+                <div class="card-obra-conteudo">
+                    <h5>Estrutura e Montagem</h5>
+                    <p>Montagem limpa e alinhamento rígido, garantindo a solidez e a precisão do esqueleto da obra.</p>
+                </div>
+            </div>
+
+            <!-- Foto 2: Impermeabilização -->
+            <div class="card-obra">
+                <img src="1000200513.jpg" alt="Impermeabilização com Manta" onerror="this.src='1000200513.JPG'">
+                <div class="card-obra-conteudo">
+                    <h5>Impermeabilização Técnica</h5>
+                    <p>Aplicação cuidadosa de manta asfáltica. Proteção definitiva contra infiltrações e ações do tempo.</p>
+                </div>
+            </div>
+
+            <!-- Foto 3: Escada / Porcelanato -->
+            <div class="card-obra">
+                <img src="1000200517.jpg" alt="Escada em Porcelanato" onerror="this.src='1000200517.JPG'">
+                <div class="card-obra-conteudo">
+                    <h5>Escada e Porcelanato</h5>
+                    <p>Cortes precisos e nivelamento impecável no revestimento, transformando o espaço com alto padrão.</p>
+                </div>
+            </div>
+
+            <!-- Foto 4: Piso Laminado -->
+            <div class="card-obra">
+                <img src="1000200574.jpg" alt="Instalação de Piso" onerror="this.src='1000200574.JPG'">
+                <div class="card-obra-conteudo">
+                    <h5>Piso Laminado</h5>
+                    <p>Preparação do contrapiso com massa niveladora para um encaixe suave, sem imperfeições.</p>
+                </div>
+            </div>
+
+            <!-- Foto 5: Cobertura -->
+            <div class="card-obra">
+                <img src="1000200488.jpg" alt="Cobertura e Telhado" onerror="this.src='1000200488.JPG'">
+                <div class="card-obra-conteudo">
+                    <h5>Telhados e Coberturas</h5>
+                    <p>Finalização segura da estrutura superior, garantindo vedação completa da edificação.</p>
+                </div>
+            </div>
+            
+            <!-- Último quadrado: Chamada para Orçamento -->
             <a href="https://wa.me/5551998142093" target="_blank" style="text-decoration: none;" class="card-orcamento">
                 <h4>QUER UM RESULTADO ASSIM?</h4>
-                <p>Pedir orçamento grátis</p>
+                <p>Clique aqui para pedir orçamento grátis</p>
             </a>
         </div>
     </section>
 
+    <!-- Perguntas Frequentes (FAQ) -->
     <section class="faq-section">
         <h3>Dúvidas <span>Frequentes</span></h3>
 
         <details>
-            <summary>A JBM faz tanto obra convencional quanto Steel Frame?</summary>
-            <p>Sim! Dominamos perfeitamente as duas técnicas. Executamos construções convencionais completas (fundação, alvenaria, vigas e lajes), reformas estruturais e também somos especialistas na montagem de estruturas de alta performance em Steel Frame.</p>
+            <summary>A JBM faz tanto obra convencional quanto reformas finas?</summary>
+            <p>Sim! Dominamos perfeitamente desde as etapas brutas da construção civil (fundações, estruturas, alvenaria, coberturas e telhados) até os acabamentos mais delicados, como porcelanatos, pisos laminados e impermeabilizações com manta asfáltica.</p>
         </details>
 
         <details>
-            <summary>Quais são as especificações gerais das obras que vocês atendem?</summary>
-            <p>Atendemos projetos residenciais e comerciais de pequeno, médio e grande porte. Cuidamos de fundações, levantamento de paredes, coberturas, instalações hidráulicas/elétricas básicas integradas, colocação de pisos, azulejos e acabamentos finos de pintura.</p>
+            <summary>Quais são as especificações das obras que vocês atendem?</summary>
+            <p>Atendemos projetos residenciais e comerciais. Trabalhamos com foco em cronogramas organizados para entregar uma obra limpa, segura e fiel às necessidades e plantas do cliente.</p>
         </details>
 
         <details>
             <summary>Como funciona o acompanhamento e a liderança das equipes?</summary>
-            <p>Todas as frentes de trabalho são coordenadas diretamente pelo mestre de obra Juliano de Brito Melos. Nossa equipe é totalmente profissionalizada, treinada para manter o canteiro organizado, limpo e focado no cumprimento fiel do projeto técnico fornecido.</p>
+            <p>Todas as frentes de trabalho são coordenadas diretamente pelo mestre de obra Juliano de Brito Melos. Nossa equipe é profissionalizada e focada no cumprimento fiel do projeto técnico fornecido.</p>
         </details>
 
         <details>
-            <summary>Como solicitar um orçamento e quais os prazos de resposta?</summary>
-            <p>Basta clicar em qualquer botão de WhatsApp aqui no site! Você enviará os detalhes ou o projeto da sua obra diretamente para nós. Realizamos uma análise detalhada das especificações para enviar uma proposta justa, transparente e sem surpresas no meio do caminho.</p>
+            <summary>Como solicitar um orçamento e qual o prazo?</summary>
+            <p>Basta clicar em qualquer botão de WhatsApp aqui no site! Você enviará os detalhes da sua obra e nós realizaremos uma análise detalhada para enviar uma proposta justa, transparente e sem surpresas.</p>
         </details>
     </section>
 
+    <!-- Botão Flutuante do WhatsApp -->
     <a href="https://wa.me/5551998142093" target="_blank" class="whatsapp-fixo">
         <svg viewBox="0 0 32 32">
             <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.7-2A13 13 0 1 0 16 2zm6.6 18.6c-.4.5-1.9 1-2.6 1-.7 0-1.5-.3-4.5-1.6-3.8-1.6-6.2-5.4-6.4-5.7-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.4.7-.5.9-.5h.6c.2 0 .5 0 .8.6.3.7 1 2.4 1.1 2.6.1.2.1.5 0 .7-.1.3-.3.5-.5.7-.2.2-.4.5-.2.8.4.7 1.7 2.8 3.6 4.5 2.5 2.2 4.6 2.9 5.2 3.2.6.3.9.2 1.2-.1.4-.4 1.6-1.9 2-2.5.4-.6.8-.5 1.3-.3.6.3 3.5 1.7 4.1 2 .6.3 1 .4 1.1.7.2.3.2 1.7-.2 2.2z"/>
