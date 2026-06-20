@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -167,29 +168,42 @@
             margin: 0 auto;
         }
 
-        /* Seção do Vídeo da Obra */
-        .video-section {
+        /* Seções de Vídeos */
+        .video-container-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
             margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .video-container-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .video-section {
             text-align: center;
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #2c2c2c;
         }
 
         .video-section h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--primary);
         }
 
         .video-wrapper {
-            max-width: 750px;
-            margin: 0 auto;
             position: relative;
             padding-bottom: 56.25%; /* Proporção 16:9 */
             height: 0;
             overflow: hidden;
             background: #000;
-            border-radius: 8px;
-            border: 1px solid #2c2c2c;
+            border-radius: 6px;
         }
 
         .video-wrapper video {
@@ -243,7 +257,7 @@
 
         .card-etapa img {
             width: 100%;
-            height: 220px;
+            height: 250px;
             object-fit: cover;
             border-bottom: 4px solid var(--primary);
         }
@@ -264,7 +278,7 @@
             font-size: 0.95rem;
         }
 
-        /* Outros Trabalhos (Mini Galeria + Última Foto) */
+        /* Mini Galeria Avançada */
         .galeria-extra-section {
             margin-bottom: 60px;
         }
@@ -274,6 +288,7 @@
             text-transform: uppercase;
             margin-bottom: 25px;
             font-weight: 800;
+            text-align: center;
         }
 
         .galeria-extra-section h3 span {
@@ -288,7 +303,7 @@
 
         @media (min-width: 768px) {
             .grid-mini-galeria {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -301,9 +316,8 @@
 
         .card-mini-obra img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
-            background-color: #222;
         }
 
         .card-mini-conteudo {
@@ -312,20 +326,19 @@
 
         .card-mini-conteudo h5 {
             color: var(--primary);
-            font-size: 1.1rem;
-            margin: 0 0 5px 0;
+            font-size: 1rem;
+            margin-0 0 5px 0;
             text-transform: uppercase;
         }
 
         .card-mini-conteudo p {
             color: var(--cor-subtexto);
             font-size: 0.85rem;
-            margin: 0;
         }
 
         .card-orcamento {
             background-color: var(--bg-card);
-            border: 1px solid #2c2c2c;
+            border: 2px dashed var(--primary);
             border-radius: 8px;
             display: flex;
             flex-direction: column;
@@ -345,7 +358,6 @@
         .card-orcamento p {
             color: var(--cor-subtexto);
             font-size: 0.85rem;
-            margin: 0;
         }
 
         /* Ficha Técnica */
@@ -385,7 +397,7 @@
             color: var(--cor-subtexto);
         }
 
-        /* Perguntas Frequentes - FAQ */
+        /* FAQ */
         .faq-section {
             background-color: #0b0b0b;
             padding: 40px 20px;
@@ -418,8 +430,6 @@
             font-size: 0.95rem;
             cursor: pointer;
             color: #fff;
-            outline: none;
-            user-select: none;
         }
 
         details[open] summary {
@@ -430,12 +440,9 @@
         details p {
             color: var(--cor-subtexto);
             font-size: 0.9rem;
-            line-height: 1.5;
-            margin: 0;
-            padding-top: 5px;
         }
 
-        /* Chamada para Ação - CTA */
+        /* CTA */
         .cta-section {
             text-align: center;
             padding: 50px 20px;
@@ -474,7 +481,7 @@
             transform: scale(1.03);
         }
 
-        /* Botão Fixo do WhatsApp */
+        /* Botão Fixo */
         .whatsapp-fixo {
             position: fixed;
             bottom: 20px;
@@ -499,11 +506,13 @@
 </head>
 <body>
 
+    <!-- Topo -->
     <header>
         <h1>JBM <span>Construções</span></h1>
         <a href="https://wa.me/5551998142093" target="_blank" class="btn-topo">Pedir Orçamento</a>
     </header>
 
+    <!-- Banner Principal -->
     <section class="hero-banner">
         <h2>Do Projeto ao <span>Acabamento</span></h2>
         <p>Acompanhe a evolução de obras residenciais e comerciais de excelência, unindo a robustez da construção convencional à alta qualidade de acabamento técnico.</p>
@@ -511,141 +520,213 @@
 
     <div class="container">
         
+        <!-- Texto de Introdução -->
         <section class="intro-section">
             <h3>O Desafio e a Solução</h3>
-            <p>Neste espaço, nosso objetivo é unir rapidez construtiva, segurança estrutural definitiva e um acabamento sofisticado que valoriza cada espaço.</p>
-            <p>O resultado? Uma obra limpa, organizada, executada rigorosamente dentro do cronograma e com fidelidade total ao projeto técnico do cliente.</p>
+            <p>Unimos rapidez construtiva, segurança estrutural definitiva e um acabamento sofisticado que valoriza cada espaço do seu patrimônio.</p>
         </section>
 
+        <!-- Quem Faz o Trabalho / Juliano -->
         <section class="perfil-section">
             <h3>Quem faz o <span>Trabalho</span></h3>
-            <img src="FOTO_DO_JULIANO.jpg" alt="Juliano de Brito Melos" class="foto-juliano">
+            <img src="IMG-20260620-WA0209.jpg" alt="Juliano de Brito Melos" class="foto-juliano">
             <h4>Juliano de Brito Melos</h4>
             <span class="cargo">Mestre de Obra</span>
             <p>Liderando uma equipe altamente qualificada, Juliano acompanha de perto cada especificação do projeto. Garantimos responsabilidade técnica, limpeza e compromisso rigoroso com os prazos acordados.</p>
         </section>
 
-        <section class="video-section">
-            <h3>Registro em Vídeo <span>da Obra</span></h3>
-            <div class="video-wrapper">
-                <video controls>
-                    <source src="obra-jbm.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeos.
-                </video>
-            </div>
-        </section>
+        <!-- SEÇÃO DOS VÍDEOS (Lado a Lado) -->
+        <div class="video-container-grid">
+            <section class="video-section">
+                <h3>Estrutura Geral da Obra</h3>
+                <div class="video-wrapper">
+                    <video controls>
+                        <source src="VID-20260620-WA0237.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
+            </section>
 
+            <section class="video-section">
+                <h3>Escada com Acabamento e Piso</h3>
+                <div class="video-wrapper">
+                    <video controls>
+                        <source src="VID-20260620-WA0216.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
+            </section>
+        </div>
+
+        <!-- Grandes frentes de Trabalho (Fotos Principais) -->
         <section class="etapas-section">
             <h3>Nosso Trabalho <span>na Prática</span></h3>
             <div class="grid-etapas">
                 
+                <!-- Estrutura e Telhado -->
                 <div class="card-etapa">
-                    <img src="FOTO_ESTRUTURA.jpg" alt="Estrutura da Obra">
+                    <img src="IMG-20260620-WA0213.jpg" alt="Estrutura e Telhado JBM">
                     <div class="card-conteudo">
-                        <h4>Estrutura e Montagem</h4>
-                        <p>Montagem limpa e alinhamento rígido das estruturas, garantindo a solidez e estabilidade perfeitas em toda a fundação e esqueleto do imóvel.</p>
+                        <h4>Estrutura e Telhado</h4>
+                        <p>Montagem robusta, alinhamento técnico e cobertura completa garantindo máxima estabilidade e segurança estrutural.</p>
                     </div>
                 </div>
 
+                <!-- Impermeabilização Técnica -->
                 <div class="card-etapa">
-                    <img src="FOTO_IMPERMEABILIZACAO.jpg" alt="Impermeabilização">
+                    <img src="IMG-20260620-WA0238.jpg" alt="Impermeabilização Técnica">
                     <div class="card-conteudo">
-                        <h4>Impermeabilização Técnica</h4>
-                        <p>Aplicação profissional de manta asfáltica com máxima atenção. O cuidado essencial para blindar a estrutura contra intempéries e evitar futuras infiltrações.</p>
+                        <h4>Impermeabilização Profissional</h4>
+                        <p>Aplicação rigorosa de mantas e isolantes protetores para blindar o imóvel contra infiltrações e umidade.</p>
                     </div>
                 </div>
 
+                <!-- Estrutura de Escada Interna -->
                 <div class="card-etapa">
-                    <img src="FOTO_ESCADA.jpg" alt="Acabamento de Escada">
+                    <img src="IMG-20260620-WA0244.jpg" alt="Estrutura Escada Interna">
                     <div class="card-conteudo">
-                        <h4>Escada e Porcelanato</h4>
-                        <p>Revestimentos finos de alto padrão com alinhamento milimétrico e cortes precisos, transformando escadas e pisos em elementos principais de design.</p>
+                        <h4>Estrutura de Escada Interna</h4>
+                        <p>Cálculo milimétrico e execução impecável de escadas internas de alto padrão estrutural.</p>
                     </div>
                 </div>
 
+                <!-- Banheiro com Piso Pronto -->
                 <div class="card-etapa">
-                    <img src="FOTO_PISO.jpg" alt="Colocação de Piso">
+                    <img src="IMG-20260620-WA0250.jpg" alt="Banheiro com Piso Pronto">
                     <div class="card-conteudo">
-                        <h4>Piso Laminado</h4>
-                        <p>Preparação detalhada do contrapiso através de massa niveladora antes da colocação, garantindo encaixes suaves, superfícies perfeitamente planas e conforto estético.</p>
+                        <h4>Banheiros e Revestimentos</h4>
+                        <p>Assentamento fino de porcelanatos e pisos com acabamento premium e caimento de água perfeito.</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
+        <!-- Outras Frentes (Galeria Complementar) -->
         <section class="galeria-extra-section">
-            <h3>Outras Frentes de <span>Trabalho</span></h3>
+            <h3>Galeria de <span>Evolução da Obra</span></h3>
             <div class="grid-mini-galeria">
                 
                 <div class="card-mini-obra">
-                    <img src="FOTO_TELHADO.jpg" alt="Cobertura e Telhado">
+                    <img src="IMG-20260620-WA0219.jpg" alt="Obra JBM">
                     <div class="card-mini-conteudo">
-                        <h5>Telhados e Coberturas</h5>
-                        <p>Finalização segura de coberturas residenciais e comerciais, garantindo a vedação completa e escoamento adequado.</p>
+                        <h5>Alvenaria e Cobertura</h5>
+                        <p>Fases avançadas de fechamento e telhado.</p>
                     </div>
                 </div>
 
+                <div class="card-mini-obra">
+                    <img src="IMG-20260620-WA0220.jpg" alt="Obra JBM">
+                    <div class="card-mini-conteudo">
+                        <h5>Acompanhamento Técnico</h5>
+                        <p>Garantia de fidelidade total às plantas do projeto.</p>
+                    </div>
+                </div>
+
+                <div class="card-mini-obra">
+                    <img src="IMG-20260620-WA0225.jpg" alt="Obra JBM">
+                    <div class="card-mini-conteudo">
+                        <h5>Montagem de Cobertura</h5>
+                        <p>Estrutura superior finalizada com sucesso.</p>
+                    </div>
+                </div>
+
+                <div class="card-mini-obra">
+                    <img src="IMG-20260620-WA0226.jpg" alt="Plaqueamento">
+                    <div class="card-mini-conteudo">
+                        <h5>Plaqueamento Técnico (Fase 1)</h5>
+                        <p>Instalação precisa de placas de vedação estrutural.</p>
+                    </div>
+                </div>
+
+                <div class="card-mini-obra">
+                    <img src="IMG-20260620-WA0233.jpg" alt="Plaqueamento">
+                    <div class="card-mini-conteudo">
+                        <h5>Plaqueamento Finalizado</h5>
+                        <p>Superfícies prontas para tratamentos e acabamento.</p>
+                    </div>
+                </div>
+
+                <div class="card-mini-obra">
+                    <img src="IMG-20260620-WA0239.jpg" alt="Manta Asfáltica">
+                    <div class="card-mini-conteudo">
+                        <h5>Processo de Impermeabilização</h5>
+                        <p>Cuidado em cada emenda de calhas e lages.</p>
+                    </div>
+                </div>
+
+                <div class="card-mini-obra">
+                    <img src="IMG-20260620-WA0245.jpg" alt="Área Protegida">
+                    <div class="card-mini-conteudo">
+                        <h5>Zonas Blindadas contra Infiltração</h5>
+                        <p>Qualidade que evita problemas futuros no imóvel.</p>
+                    </div>
+                </div>
+
+                <div class="card-mini-obra">
+                    <img src="IMG-20260620-WA0259.jpg" alt="Banheiro Finalizado">
+                    <div class="card-mini-conteudo">
+                        <h5>Acabamento de Pisos Prontos</h5>
+                        <p>Ambientes limpos e entregues no padrão.</p>
+                    </div>
+                </div>
+
+                <!-- Bloco Orçamento Interativo -->
                 <a href="https://wa.me/5551998142093" target="_blank" style="text-decoration: none;" class="card-orcamento">
-                    <h4>QUER UM RESULTADO ASSIM?</h4>
-                    <p>Clique aqui para solicitar o seu orçamento gratuito</p>
+                    <h4>PROJETO EM MADEIRA E DECK</h4>
+                    <p>Realizamos acabamentos finos de alto padrão em decks de madeira. Clique para planejar o seu!</p>
                 </a>
 
             </div>
         </section>
 
+        <!-- Ficha Técnica -->
         <section class="tech-section">
             <h3>Especificações Técnicas</h3>
             <table>
                 <tr>
-                    <td>Tipo de Obra</td>
-                    <td>Residencial / Comercial / Reformas e Acabamento</td>
-                </tr>
-                <tr>
-                    <td>Sistemas Utilizados</td>
-                    <td>Construção Convencional, Alvenaria Estrutural e Estruturas Modernas</td>
+                    <td>Especialidades</td>
+                    <td>Estruturas, Telhados, Plaqueamentos e Impermeabilizações Completas</td>
                 </tr>
                 <tr>
                     <td>Acabamentos Finos</td>
-                    <td>Porcelanato Premium, Revestimentos de Escada e Pisos Laminados</td>
+                    <td>Pisos Prontos, Porcelanatos de Banheiro e Decks de Madeira Premium</td>
                 </tr>
                 <tr>
                     <td>Diferencial JBM</td>
-                    <td>Supervisão direta do Mestre Juliano, canteiro limpo e entrega rigorosa no prazo</td>
+                    <td>Supervisão do Mestre Juliano, canteiro limpo e entrega rigorosa no prazo</td>
                 </tr>
             </table>
         </section>
 
+        <!-- FAQ -->
         <section class="faq-section">
             <h3>Dúvidas <span>Frequentes</span></h3>
-
             <details>
-                <summary>A JBM faz tanto obra convencional quanto reformas finas?</summary>
-                <p>Sim! Dominamos perfeitamente desde as etapas brutas da construção civil (fundações, estruturas, alvenaria, coberturas e telhados) até os acabamentos mais detalhados, como porcelanatos, pisos laminados e impermeabilizações completas.</p>
+                <summary>Vocês realizam desde a estrutura bruta até o acabamento?</summary>
+                <p>Sim! Como mestre de obra, coordeno desde as fundações, coberturas de telhados, plaqueamentos e impermeabilização técnica até a entrega dos pisos prontos e decks de madeira.</p>
             </details>
-
             <details>
-                <summary>Quais são as especificações gerais das obras que vocês atendem?</summary>
-                <p>Atendemos projetos residenciais e comerciais de portes variados. Trabalhamos focados em planejamento rígido para entregar uma obra limpa, segura e totalmente fiel às plantas fornecidas.</p>
-            </details>
-
-            <details>
-                <summary>Como funciona o acompanhamento e a liderança das equipes?</summary>
-                <p>Todas as frentes de trabalho são coordenadas de perto pelo mestre de obra Juliano de Brito Melos. Nossa equipe é profissionalizada e altamente comprometida com a organização do canteiro de obras.</p>
-            </details>
-
-            <details>
-                <summary>Como solicitar um orçamento e qual o prazo de retorno?</summary>
-                <p>Basta clicar em qualquer botão de WhatsApp aqui no site! Você enviará os detalhes do seu projeto e nós faremos uma análise técnica detalhada para te passar uma proposta justa, transparente e sem surpresas.</p>
+                <summary>Como solicitar um orçamento de deck ou reforma?</summary>
+                <p>Basta clicar no botão do WhatsApp e nos enviar os detalhes ou plantas do seu projeto. Retornamos rapidamente com a análise técnica.</p>
             </details>
         </section>
 
+        <!-- CTA Final -->
         <section class="cta-section">
             <h3>Pronto para construir ou reformar sem estresse?</h3>
-            <p>Garanta valorização patrimonial, segurança estrutural e o acabamento impecável que você sempre quis para o seu imóvel.</p>
+            <p>Garanta valorização patrimonial, segurança estrutural e o acabamento impecável que você quer.</p>
             <a href="https://wa.me/5551998142093" class="btn-whatsapp" target="_blank">Falar com Juliano no WhatsApp</a>
         </section>
 
     </div>
 
-    <a hre
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5551998142093" target="_blank" class="whatsapp-fixo">
+        <svg viewBox="0 0 32 32">
+            <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.7-2A13 13 0 1 0 16 2zm6.6 18.6c-.4.5-1.9 1-2.6 1-.7 0-1.5-.3-4.5-1.6-3.8-1.6-6.2-5.4-6.4-5.7-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.4.7-.5.9-.5h.6c.2 0 .5 0 .8.6.3.7 1 2.4 1.1 2.6.1.2.1.5 0 .7-.1.3-.3.5-.5.7-.2.2-.4.5-.2.8.4.7 1.7 2.8 3.6 4.5 2.5 2.2 4.6 2.9 5.2 3.2.6.3.9.2 1.2-.1.4-.4 1.6-1.9 2-2.5.4-.6.8-.5 1.3-.3.6.3 3.5 1.7 4.1 2 .6.3 1 .4 1.1.7.2.3.2 1.7-.2 2.2z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
