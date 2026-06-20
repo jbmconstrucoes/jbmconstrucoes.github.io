@@ -13,12 +13,17 @@
             --cor-subtexto: #b3b3b3;
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: var(--bg-principal);
             color: var(--cor-texto);
-            margin: 0;
-            padding: 0;
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
 
@@ -37,7 +42,6 @@
 
         header h1 {
             font-size: 1.2rem;
-            margin: 0;
             text-transform: uppercase;
             font-weight: 800;
         }
@@ -59,7 +63,6 @@
         /* Seção Principal (Hero) */
         .hero {
             padding: 40px 20px;
-            text-align: left;
         }
 
         .tag-local {
@@ -76,7 +79,7 @@
         .hero h2 {
             font-size: 2.2rem;
             line-height: 1.1;
-            margin: 0 0 15px 0;
+            margin-bottom: 15px;
             text-transform: uppercase;
             font-weight: 900;
         }
@@ -88,227 +91,132 @@
         .hero p {
             color: var(--cor-subtexto);
             font-size: 1rem;
-            line-height: 1.5;
             margin-bottom: 30px;
         }
 
-        /* Botões Principais */
+        /* Área do Vídeo de Destaque */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #2c2c2c;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Botões */
         .cta-container {
             display: flex;
             gap: 10px;
             margin-bottom: 40px;
         }
 
-        .btn-principal {
+        .btn-principal, .btn-secundario {
             flex: 1;
-            background-color: var(--cor-destaque);
-            color: #000;
             text-decoration: none;
             padding: 15px 10px;
             font-weight: bold;
             text-align: center;
             border-radius: 5px;
             font-size: 0.9rem;
+        }
+
+        .btn-principal {
+            background-color: var(--cor-destaque);
+            color: #000;
         }
 
         .btn-secundario {
-            flex: 1;
             background-color: transparent;
             color: var(--cor-texto);
             border: 1px solid #333;
-            text-decoration: none;
-            padding: 15px 10px;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 5px;
-            font-size: 0.9rem;
         }
 
-        /* Números / Diferenciais */
-        .status-container {
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid #2c2c2c;
-            padding-top: 25px;
-            margin-bottom: 40px;
-        }
-
-        .status-box {
-            text-align: left;
-        }
-
-        .status-box h3 {
-            color: var(--cor-destaque);
-            font-size: 1.8rem;
-            margin: 0;
-            font-weight: bold;
-        }
-
-        .status-box p {
-            color: var(--cor-subtexto);
-            font-size: 0.75rem;
-            margin: 5px 0 0 0;
-        }
-
-        /* Quem Faz o Trabalho / Mestre de Obra */
-        .perfil-section {
+        /* Seção de Etapas / Galeria */
+        .etapas-section {
             padding: 40px 20px;
-            background-color: var(--bg-card);
-            border-top: 1px solid #2c2c2c;
-            border-bottom: 1px solid #2c2c2c;
-            text-align: center;
+            background-color: #0b0b0b;
         }
 
-        .perfil-section h3 {
+        .etapas-section h3 {
             font-size: 1.6rem;
             text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 25px;
-        }
-
-        .perfil-section h3 span {
-            color: var(--cor-destaque);
-        }
-
-        .foto-juliano {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--cor-destaque);
-            margin-bottom: 15px;
-        }
-
-        .perfil-section h4 {
-            margin: 5px 0;
-            font-size: 1.2rem;
-            color: #fff;
-        }
-
-        .perfil-section .cargo {
-            color: var(--cor-destaque);
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .perfil-section p {
-            color: var(--cor-subtexto);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Galeria de Fotos */
-        .galeria-section {
-            padding: 40px 20px;
-        }
-
-        .galeria-section h4 {
-            color: var(--cor-destaque);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-
-        .galeria-section h3 {
-            font-size: 1.6rem;
-            text-transform: uppercase;
-            margin-top: 0;
             margin-bottom: 25px;
             font-weight: 800;
         }
 
-        .grid-galeria {
+        .etapas-section h3 span {
+            color: var(--cor-destaque);
+        }
+
+        .grid-etapas {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
-        .grid-galeria img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
+        @media (min-width: 768px) {
+            .grid-etapas {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card-etapa {
+            background: var(--bg-card);
             border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #2c2c2c;
+        }
+
+        .card-etapa img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             background-color: #222;
         }
 
-        .card-orcamento {
-            background-color: var(--bg-card);
-            border: 1px solid #2c2c2c;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 15px;
+        .card-conteudo {
+            padding: 20px;
         }
 
-        .card-orcamento h4 {
+        .card-conteudo h4 {
             color: var(--cor-destaque);
-            font-size: 1rem;
-            margin: 0 0 5px 0;
-            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .card-orcamento p {
+        .card-conteudo p {
             color: var(--cor-subtexto);
-            font-size: 0.75rem;
-            margin: 0;
+            font-size: 0.9rem;
         }
 
-        /* Perguntas Frequentes (FAQ) */
-        .faq-section {
-            padding: 40px 20px;
-            background-color: #0b0b0b;
+        /* Chamada Final */
+        .cta-final {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
             border-top: 1px solid #2c2c2c;
         }
 
-        .faq-section h3 {
-            font-size: 1.6rem;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 25px;
-            text-align: left;
+        .cta-final h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
-        .faq-section h3 span {
-            color: var(--cor-destaque);
-        }
-
-        details {
-            background-color: var(--bg-card);
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-            border: 1px solid #2c2c2c;
-        }
-
-        summary {
-            font-weight: bold;
-            font-size: 0.95rem;
-            cursor: pointer;
-            color: #fff;
-            outline: none;
-            user-select: none;
-        }
-
-        details[open] summary {
-            color: var(--cor-destaque);
-            margin-bottom: 10px;
-        }
-
-        details p {
+        .cta-final p {
             color: var(--cor-subtexto);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin: 0;
-            padding-top: 5px;
+            margin-bottom: 25px;
         }
 
         /* Botão Flutuante do WhatsApp */
@@ -336,89 +244,89 @@
 </head>
 <body>
 
+    <!-- Topo -->
     <header>
         <h1>JBM <span>Construções</span></h1>
         <a href="https://wa.me/5551998142093" target="_blank" class="btn-topo">Pedir Orçamento</a>
     </header>
 
+    <!-- Seção Principal -->
     <main class="hero">
-        <div class="tag-local">● Alvenaria, Reformas e Steel Frame</div>
+        <div class="tag-local">● Construção e Reformas em Geral</div>
         
-        <h2>CONSTRUÇÃO E REFORMAS<br><span>DO JEITO CERTO.</span></h2>
+        <h2>DO PROJETO AO<br><span>ACABAMENTO PERFEITO.</span></h2>
         
-        <p>Do alicerce ao acabamento. Entregamos obras residenciais e comerciais de excelência, unindo a robustez da construção convencional à alta tecnologia e agilidade do Steel Frame.</p>
+        <p>Acompanhe a evolução do nosso trabalho. Garantimos excelência e dedicação máxima em cada etapa da sua obra, cuidando desde a estrutura até os detalhes mais finos.</p>
 
-        <div class="cta-container">
-            <a href="https://wa.me/5551998142093" target="_blank" class="btn-principal">Pedir Orçamento Grátis</a>
-            <a href="#trabalhos" class="btn-secundario">Ver Trabalhos</a>
+        <!-- Vídeo de Destaque da Obra -->
+        <div class="video-container">
+            <!-- Renomeie o arquivo do seu vídeo para "obra-jbm.mp4" e coloque na mesma pasta do GitHub -->
+            <video controls>
+                <source src="obra-jbm.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
         </div>
 
-        <div class="status-container">
-            <div class="status-box">
-                <h3>CONV</h3>
-                <p>Alvenaria e Reformas</p>
-            </div>
-            <div class="status-box">
-                <h3>STEEL</h3>
-                <p>Construção a Seco</p>
-            </div>
-            <div class="status-box">
-                <h3>OBRA</h3>
-                <p>Equipe Profissional</p>
-            </div>
+        <div class="cta-container">
+            <a href="https://wa.me/5551998142093" target="_blank" class="btn-principal">Chamar no WhatsApp</a>
+            <a href="#portfolio" class="btn-secundario">Ver Etapas</a>
         </div>
     </main>
 
-    <section class="perfil-section">
-        <h3>Quem faz o <span>Trabalho</span></h3>
-        <img src="1000200448.jpg" alt="Juliano de Brito Melos" class="foto-juliano" onerror="this.src='1000200494.jpg'">
-        <h4>Juliano de Brito Melos</h4>
-        <span class="cargo">Mestre de Obra</span>
-        <p>Liderando uma equipe altamente qualificada e profissionalizada, Juliano acompanha de perto cada especificação do projeto. Garantimos responsabilidade técnica, limpeza e compromisso rigoroso com os prazos acordados.</p>
-    </section>
-
-    <section class="galeria-section" id="trabalhos">
-        <h4>Veja na prática</h4>
-        <h3>O trabalho em movimento.</h3>
-
-        <div class="grid-galeria">
-            <img src="1000200576.jpg" alt="Estrutura Steel Frame JBM">
-            <img src="1000200513.jpg" alt="Acabamento Interno JBM">
-            <img src="1000200517.jpg" alt="Revestimento e Piso JBM">
-            <img src="1000200574.jpg" alt="Impermeabilização e Obras JBM">
-            <img src="1000200488.jpg" alt="Cobertura e Telhado JBM">
+    <!-- Galeria e Detalhes do Trabalho -->
+    <section class="etapas-section" id="portfolio">
+        <h3>Nosso Trabalho <span>na Prática</span></h3>
+        
+        <div class="grid-etapas">
             
-            <a href="https://wa.me/5551998142093" target="_blank" style="text-decoration: none;" class="card-orcamento">
-                <h4>QUER UN RESULTADO ASSIM?</h4>
-                <p>Pedir orçamento grátis</p>
-            </a>
+            <!-- Etapa 1 -->
+            <div class="card-etapa">
+                <!-- Se você tiver uma foto dessa etapa, mude o nome abaixo para o nome da foto -->
+                <img src="piso-laminado.jpg" alt="Instalação de Piso Laminado" onerror="this.src='https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-conteudo">
+                    <h4>Piso Laminado</h4>
+                    <p>Preparação rigorosa do contrapiso com massa niveladora e encaixe milimétrico para garantir conforto térmico e elegância no caminhar.</p>
+                </div>
+            </div>
+
+            <!-- Etapa 2 -->
+            <div class="card-etapa">
+                <img src="escada-porcelanato.jpg" alt="Revestimento de Escada em Porcelanato" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-conteudo">
+                    <h4>Escada em Porcelanato</h4>
+                    <p>Revestimento sofisticado com alinhamento perfeito, cortes precisos e proteção adequada durante a cura do material.</p>
+                </div>
+            </div>
+
+            <!-- Etapa 3 -->
+            <div class="card-etapa">
+                <img src="steel-frame.jpg" alt="Estrutura de Steel Frame" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-conteudo">
+                    <h4>Estrutura Avançada</h4>
+                    <p>Montagem moderna e limpa de estruturas de alta resistência, garantindo isolamento termoacústico e agilidade na entrega.</p>
+                </div>
+            </div>
+
+            <!-- Etapa 4 -->
+            <div class="card-etapa">
+                <img src="manta-asfaltica.jpg" alt="Impermeabilização com Manta Asfáltica" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-conteudo">
+                    <h4>Impermeabilização</h4>
+                    <p>Aplicação técnica de manta asfáltica com maçarico. O cuidado ideal na laje para evitar dores de cabeça futuras com infiltrações.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="faq-section">
-        <h3>Dúvidas <span>Frequentes</span></h3>
-
-        <details>
-            <summary>A JBM faz tanto obra convencional quanto Steel Frame?</summary>
-            <p>Sim! Dominamos perfeitamente as duas técnicas. Executamos construções convencionais completas (fundação, alvenaria, vigas e lajes), reformas estruturais e também somos especialistas na montagem de estruturas de alta performance em Steel Frame.</p>
-        </details>
-
-        <details>
-            <summary>Quais são as especificações gerais das obras que vocês atendem?</summary>
-            <p>Atendemos projetos residenciais e comerciais de pequeno, médio e grande porte. Cuidamos de fundações, levantamento de paredes, coberturas, instalações hidráulicas/elétricas básicas integradas, colocação de pisos, azulejos e acabamentos finos de pintura.</p>
-        </details>
-
-        <details>
-            <summary>Como funciona o acompanhamento e a liderança das equipes?</summary>
-            <p>Todas as frentes de trabalho são coordenadas diretamente pelo mestre de obra Juliano de Brito Melos. Nossa equipe é totalmente profissionalizada, treinada para manter o canteiro organizado, limpo e focado no cumprimento fiel do projeto técnico fornecido.</p>
-        </details>
-
-        <details>
-            <summary>Como solicitar um orçamento e quais os prazos de resposta?</summary>
-            <p>Basta clicar em qualquer botão de WhatsApp aqui no site! Você enviará os detalhes ou o projeto da sua obra diretamente para nós. Realizamos uma análise detalhada das especificações para enviar uma proposta justa, transparente e sem surpresas no meio do caminho.</p>
-        </details>
+    <!-- Chamada Final -->
+    <section class="cta-final">
+        <h3>Pronto para valorizar seu imóvel?</h3>
+        <p>Faça seu orçamento de construção ou reforma com quem entrega qualidade de verdade.</p>
+        <a href="https://wa.me/5551998142093" target="_blank" class="btn-principal" style="display: inline-block; padding: 15px 30px;">Falar Direto no WhatsApp</a>
     </section>
 
+    <!-- Botão Flutuante do WhatsApp -->
     <a href="https://wa.me/5551998142093" target="_blank" class="whatsapp-fixo">
         <svg viewBox="0 0 32 32">
             <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.7-2A13 13 0 1 0 16 2zm6.6 18.6c-.4.5-1.9 1-2.6 1-.7 0-1.5-.3-4.5-1.6-3.8-1.6-6.2-5.4-6.4-5.7-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.4.7-.5.9-.5h.6c.2 0 .5 0 .8.6.3.7 1 2.4 1.1 2.6.1.2.1.5 0 .7-.1.3-.3.5-.5.7-.2.2-.4.5-.2.8.4.7 1.7 2.8 3.6 4.5 2.5 2.2 4.6 2.9 5.2 3.2.6.3.9.2 1.2-.1.4-.4 1.6-1.9 2-2.5.4-.6.8-.5 1.3-.3.6.3 3.5 1.7 4.1 2 .6.3 1 .4 1.1.7.2.3.2 1.7-.2 2.2z"/>
