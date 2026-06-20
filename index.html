@@ -94,49 +94,22 @@
             padding: 40px 20px;
         }
 
-        /* Seção do Vídeo e Introdução */
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
+        /* Seção do Texto de Introdução */
+        .intro-section {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        @media (min-width: 768px) {
-            .main-content {
-                grid-template-columns: 1.2fr 1fr;
-                align-items: center;
-            }
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
-            height: 0;
-            overflow: hidden;
-            background: #000;
-            border-radius: 8px;
-            border: 1px solid #2c2c2c;
-        }
-
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .intro-text h3 {
+        .intro-section h3 {
             font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--primary);
             text-transform: uppercase;
         }
 
-        .intro-text p {
-            margin-bottom: 15px;
+        .intro-section p {
+            max-width: 800px;
+            margin: 0 auto 15px auto;
             color: var(--cor-subtexto);
         }
 
@@ -147,7 +120,7 @@
             border: 1px solid #2c2c2c;
             border-radius: 8px;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .perfil-section h3 {
@@ -192,6 +165,40 @@
             line-height: 1.6;
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* Seção do Vídeo da Obra */
+        .video-section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .video-section h3 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .video-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 8px;
+            border: 1px solid #2c2c2c;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* Grid de Etapas da Obra (Cards Grandes) */
@@ -504,19 +511,10 @@
 
     <div class="container">
         
-        <section class="main-content">
-            <div class="video-container">
-                <video controls>
-                    <source src="obra-jbm.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeos.
-                </video>
-            </div>
-            
-            <div class="intro-text">
-                <h3>O Desafio e a Solução</h3>
-                <p>Neste espaço, nosso objetivo é unir rapidez construtiva, segurança estrutural definitiva e um acabamento sofisticado que valoriza cada espaço.</p>
-                <p>O resultado? Uma obra limpa, organizada, executada rigorosamente dentro do cronograma e com fidelidade total ao projeto técnico do cliente.</p>
-            </div>
+        <section class="intro-section">
+            <h3>O Desafio e a Solução</h3>
+            <p>Neste espaço, nosso objetivo é unir rapidez construtiva, segurança estrutural definitiva e um acabamento sofisticado que valoriza cada espaço.</p>
+            <p>O resultado? Uma obra limpa, organizada, executada rigorosamente dentro do cronograma e com fidelidade total ao projeto técnico do cliente.</p>
         </section>
 
         <section class="perfil-section">
@@ -525,6 +523,16 @@
             <h4>Juliano de Brito Melos</h4>
             <span class="cargo">Mestre de Obra</span>
             <p>Liderando uma equipe altamente qualificada, Juliano acompanha de perto cada especificação do projeto. Garantimos responsabilidade técnica, limpeza e compromisso rigoroso com os prazos acordados.</p>
+        </section>
+
+        <section class="video-section">
+            <h3>Registro em Vídeo <span>da Obra</span></h3>
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="obra-jbm.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
         </section>
 
         <section class="etapas-section">
@@ -640,6 +648,4 @@
 
     </div>
 
-    <a href="https://wa.me/5551998142093" target="_blank" class="whatsapp-fixo">
-        <svg viewBox="0 0 32 32">
-            <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.7-2A13 13 0 1 0 16 2zm6.6 18.6c-.4.5-1.9 1-2.6 1-.7 0-1
+    <a hre
