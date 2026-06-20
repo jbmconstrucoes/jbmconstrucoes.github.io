@@ -1,56 +1,300 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>JBM Construções e Reformas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>JBM Construções e Reformas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg-principal: #121212;
+            --bg-card: #1e1e1e;
+            --cor-destaque: #f39c12;
+            --cor-texto: #ffffff;
+            --cor-subtexto: #b3b3b3;
+        }
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-      background: #2c2c2c;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+        /* Topo / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #000000;
+            border-bottom: 1px solid #2c2c2c;
+        }
 
-    section {
-      padding: 20px;
-    }
+        header h1 {
+            font-size: 1.2rem;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
 
-    .btn {
-      display: inline-block;
-      background: #2c2c2c;
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-  </style>
+        header h1 span {
+            color: var(--cor-destaque);
+        }
+
+        .btn-topo {
+            background-color: var(--cor-destaque);
+            color: #000;
+            text-decoration: none;
+            padding: 8px 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 0.85rem;
+        }
+
+        /* Seção Principal (Hero) */
+        .hero {
+            padding: 40px 20px;
+            text-align: left;
+        }
+
+        .tag-local {
+            display: inline-block;
+            border: 1px solid var(--cor-destaque);
+            color: var(--cor-destaque);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            line-height: 1.1;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .hero h2 span {
+            color: var(--cor-destaque);
+        }
+
+        .hero p {
+            color: var(--cor-subtexto);
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        /* Botões Principais */
+        .cta-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .btn-principal {
+            flex: 1;
+            background-color: var(--cor-destaque);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 10px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-secundario {
+            flex: 1;
+            background-color: transparent;
+            color: var(--cor-texto);
+            border: 1px solid #333;
+            text-decoration: none;
+            padding: 15px 10px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Números / Diferenciais */
+        .status-container {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #2c2c2c;
+            padding-top: 25px;
+            margin-bottom: 40px;
+        }
+
+        .status-box {
+            text-align: left;
+        }
+
+        .status-box h3 {
+            color: var(--cor-destaque);
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .status-box p {
+            color: var(--cor-subtexto);
+            font-size: 0.75rem;
+            margin: 5px 0 0 0;
+        }
+
+        /* Galeria de Fotos */
+        .galeria-section {
+            padding: 20px;
+        }
+
+        .galeria-section h4 {
+            color: var(--cor-destaque);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .galeria-section h3 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .grid-galeria {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .grid-galeria img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            background-color: #222;
+        }
+
+        .card-orcamento {
+            background-color: var(--bg-card);
+            border: 1px solid #2c2c2c;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .card-orcamento h4 {
+            color: var(--cor-destaque);
+            font-size: 1rem;
+            margin: 0 0 5px 0;
+            font-weight: bold;
+        }
+
+        .card-orcamento p {
+            color: var(--cor-subtexto);
+            font-size: 0.75rem;
+            margin: 0;
+        }
+
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-fixo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            z-index: 9999;
+        }
+
+        .whatsapp-fixo svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+    </style>
 </head>
-
 <body>
 
-  <header>
-    <h1>JBM Construções e Reformas</h1>
-    <p>Construção civil, Steel Frame e reformas em geral</p>
-  </header>
+    <!-- Topo -->
+    <header>
+        <h1>JBM <span>Construções</span></h1>
+        <a href="https://wa.me/5551980142093" target="_blank" class="btn-topo">Pedir Orçamento</a>
+    </header>
 
-  <section>
-    <h2>Atendemos Tramandaí e região</h2>
-    <p>Qualidade, compromisso e responsabilidade do início ao fim da obra.</p>
+    <!-- Seção Principal -->
+    <main class="hero">
+        <div class="tag-local">● Especialista em Steel Frame e Reformas</div>
+        
+        <h2>STEEL FRAME<br><span>FEITO DO JEITO CERTO.</span></h2>
+        
+        <p>Obra limpa, rápida e sem surpresas no preço. Cuidamos do seu projeto do início ao fim com quem realmente entende de construção civil e reformas em Tramandaí e região.</p>
 
-    <a class="btn" href="https://wa.me/+55 51 9814-2093 " target="_blank">
-      Falar no WhatsApp
+        <div class="cta-container">
+            <a href="https://wa.me/5551980142093" target="_blank" class="btn-principal">Pedir Orçamento Grátis</a>
+            <a href="#trabalhos" class="btn-secundario">Ver trabalhos</a>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="status-container">
+            <div class="status-box">
+                <h3>+10</h3>
+                <p>Anos de experiência</p>
+            </div>
+            <div class="status-box">
+                <h3>0</h3>
+                <p>Taxa de orçamento</p>
+            </div>
+            <div class="status-box">
+                <h3>TMD</h3>
+                <p>Tramandaí e Região</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Galeria de Trabalhos -->
+    <section class="galeria-section" id="trabalhos">
+        <h4>Veja na prática</h4>
+        <h3>O trabalho em movimento.</h3>
+
+        <div class="grid-galeria">
+            <!-- NOTA: Substitua o link entre as aspas pelas fotos reais da sua obra futuramente -->
+            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+1" alt="Trabalho JBM">
+            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+2" alt="Trabalho JBM">
+            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+3" alt="Trabalho JBM">
+            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+4" alt="Trabalho JBM">
+            <img src="https://via.placeholder.com/300x300/222/fff?text=Obra+5" alt="Trabalho JBM">
+            
+            <!-- Último quadrado é o chamado para orçamento igual ao modelo -->
+            <a href="https://wa.me/5551980142093" target="_blank" style="text-decoration: none;" class="card-orcamento">
+                <h4>QUER UM RESULTADO ASSIM?</h4>
+                <p>Pedir orçamento grátis</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5551980142093" target="_blank" class="whatsapp-fixo">
+        <svg viewBox="0 0 32 32">
+            <path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.7-2A13 13 0 1 0 16 2zm6.6 18.6c-.4.5-1.9 1-2.6 1-.7 0-1.5-.3-4.5-1.6-3.8-1.6-6.2-5.4-6.4-5.7-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.4.7-.5.9-.5h.6c.2 0 .5 0 .8.6.3.7 1 2.4 1.1 2.6.1.2.1.5 0 .7-.1.3-.3.5-.5.7-.2.2-.4.5-.2.8.4.7 1.7 2.8 3.6 4.5 2.5 2.2 4.6 2.9 5.2 3.2.6.3.9.2 1.2-.1.4-.4 1.6-1.9 2-2.5.4-.6.8-.5 1.3-.3.6.3 3.5 1.7 4.1 2 .6.3 1 .4 1.1.7.2.3.2 1.7-.2 2.2z"/>
+        </svg>
     </a>
-  </section>
 
 </body>
 </html>
